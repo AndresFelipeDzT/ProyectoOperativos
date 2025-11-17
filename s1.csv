@@ -1,7 +1,0 @@
-# solicitudes1.csv
-cat > s1.csv << 'EOF'
-Zuluaga,8,10
-Dominguez,8,4
-Rojas,10,10
-Perez,12,15
-EOF
