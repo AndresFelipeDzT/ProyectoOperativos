@@ -5,6 +5,16 @@
 * Autor(es): Alejandro Beltran, Mauricio Beltran & Andres Diaz
 * Materia: Sistemas opertivos
 * Temas: Proyecto controlador_funciones.h
+*
+* Descripción:
+* Este archivo contiene las definiciones de estructuras, constantes,
+* variables globales y prototipos de funciones necesarios para el
+* funcionamiento del controlador del sistema de reservas del parque.
+* Aquí se organiza la lógica base de la simulación: manejo del reloj,
+* registro de agentes, procesamiento de solicitudes, control de aforo,
+* reprogramación de reservas y comunicación mediante pipes. Su propósito
+* es centralizar los elementos fundamentales que permiten la correcta
+* interacción entre los hilos y módulos del proyecto.
 ******************************************************/
 #ifndef CONTROLADOR_FUNCIONES_H
 #define CONTROLADOR_FUNCIONES_H
@@ -50,7 +60,7 @@ typedef struct {
 //La cantidad de segundos de las horas simuladas y el maximo de personas
 extern int hora_actual, hora_inicio, hora_fin, seg_por_hora, aforo_max;
 extern char pipe_entrada[MAX_NOMBRE]; //Nombre del pipe
-extern HoraParque parque[MAX_HORAS]; //Estructura que tiene la informacion de las horas
+extern HoraParque parque[MAX_HORAS]; //Arreglo que tiene la informacion de las horas
 extern int fd_pipe_entrada; //Descriptor del pipe
 //Cuenta cuantas solicitudes han sido aprobadas, reprogramadas o negadas
 extern int solicitudes_aceptadas, solicitudes_reprogramadas, solicitudes_negadas;
@@ -82,5 +92,23 @@ void terminar_agentes(void);
 //limpia los recursos y borra el pipe del controlador
 void limpiar_recursos(void);
 
-#endif
+#endif 
+
+/******************************************************
+* CONCLUSIÓN
+* 
+* Este archivo centraliza todas las estructuras de datos
+* y prototipos necesarios para el funcionamiento del 
+* controlador. Su organización modular permite separar 
+* claramente la gestión del reloj, las reservas, la 
+* comunicación por pipes y la sincronización entre hilos.
+* 
+* La definición explícita de constantes, tipos y variables 
+* globales facilita la integración entre los diferentes
+* componentes del proyecto y asegura un manejo ordenado
+* de la simulación. Gracias a esta arquitectura, el 
+* controlador puede coordinar múltiples agentes, validar 
+* aforos, reprogramar reservas y mantener la consistencia 
+* del sistema en tiempo real.
+******************************************************/
 

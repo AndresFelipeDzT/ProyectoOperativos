@@ -5,6 +5,20 @@
 * Autor(es): Alejandro Beltran, Mauricio Beltran & Andres Diaz
 * Materia: Sistemas opertivos
 * Temas: Proyecto agente_funciones.c
+*
+* Descripción:
+*
+* Este archivo implementa todas las funciones necesarias para el
+* funcionamiento del agente dentro del sistema de reservas. Aquí se
+* desarrollan los procesos de lectura y validación de argumentos,
+* creación del pipe propio del agente, registro ante el controlador,
+* recepción de la hora inicial, procesamiento de solicitudes desde un
+* archivo CSV y manejo de las respuestas enviadas por el controlador.
+* Además, incluye las rutinas encargadas de cerrar correctamente los
+* pipes y limpiar los recursos utilizados. Este módulo constituye el
+* comportamiento operativo del agente, permitiendo su comunicación
+* bidireccional y sincronizada con el controlador durante toda la
+* simulación.
 ******************************************************/
 
 #include "agente_funciones.h" //Donde se encuentran los prototipos
@@ -105,6 +119,26 @@ void cerrar_y_limpiar(int fd_entrada, int fd_propio, char* pipe_propio, char* no
     printf("Agente %s termina.\n", nombre_agente); //Mensaje confirmando que lo termino
 }
 
-
+/******************************************************
+* CONCLUSIÓN
+*
+* Este archivo implementa la lógica completa del agente,
+* permitiendo su participación activa en el sistema de
+* reservas. A través del manejo correcto de pipes, lectura
+* de archivos CSV, validación de solicitudes y recepción
+* de respuestas, el agente logra comunicarse de forma
+* ordenada y confiable con el controlador.
+*
+* La modularidad presentada aquí permite que cada agente
+* funcione de manera independiente, garantizando la
+* concurrencia y evitando interferencias entre ellos.
+* Asimismo, los procesos de registro, envío de mensajes,
+* espera de respuestas y limpieza final aseguran un flujo
+* de ejecución claro y estable durante toda la simulación.
+*
+* Con este diseño, el agente cumple adecuadamente su rol
+* de intermediario entre los usuarios y el controlador,
+* contribuyendo al funcionamiento armónico del sistema.
+******************************************************/
 
 

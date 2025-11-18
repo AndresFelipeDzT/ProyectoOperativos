@@ -5,6 +5,18 @@
 * Autor(es): Alejandro Beltran, Mauricio Beltran & Andres Diaz
 * Materia: Sistemas opertivos
 * Temas: Proyecto controlador.c
+*
+* Descripción:
+*
+* Este archivo implementa el programa principal del controlador del
+* sistema de reservas. Aquí se procesan los argumentos recibidos por
+* línea de comandos, se inicializan las estructuras del parque, se crea
+* el pipe de comunicación y se configuran las variables globales que
+* serán utilizadas durante toda la simulación. Además, se lanzan los
+* hilos encargados del reloj y de la gestión de solicitudes, coordinando
+* su ejecución mediante la sincronización correspondiente. Este módulo
+* actúa como punto de inicio y núcleo organizador del sistema,
+* asegurando que todos los componentes funcionen de manera integrada.
 ******************************************************/
 
 #include <stdio.h> //Libreria para mostrar informacion por pantalla
@@ -89,4 +101,28 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+
+/******************************************************
+* CONCLUSIÓN
+*
+* Este archivo cumple el rol fundamental de manejar la
+* simulación completa del sistema de reservas. Desde la
+* lectura y validación de parámetros hasta la inicialización
+* del parque y la creación de los hilos, su función es
+* garantizar que todos los elementos del proyecto operen en
+* coherencia.
+*
+* La correcta configuración del entorno, incluyendo pipes,
+* estructuras de horas, límites de aforo y tiempos de 
+* simulación, permite que los módulos de gestión y reloj
+* trabajen de manera estable y sincronizada. Además, la
+* creación de hilos independientes asegura concurrencia real,
+* permitiendo que el controlador responda dinámicamente a las
+* solicitudes de los agentes.
+*
+* Finalmente, este archivo establece la base operativa
+* necesaria para que el sistema funcione de manera ordenada,
+* modular y eficiente, logrando así los objetivos del proyecto
+* en un entorno concurrente.
+******************************************************/
 

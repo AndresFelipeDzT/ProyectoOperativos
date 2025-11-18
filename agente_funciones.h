@@ -5,6 +5,17 @@
 * Autor(es): Alejandro Beltran, Mauricio Beltran & Andres Diaz
 * Materia: Sistemas opertivos
 * Temas: Proyecto agente_funciones.h
+*
+* Descripción:
+* Este archivo define los prototipos de funciones, constantes y
+* configuraciones necesarias para el funcionamiento del agente dentro
+* del sistema de reservas. Aquí se centralizan las operaciones básicas
+* que el agente debe realizar: interpretar argumentos, crear su pipe
+* propio, registrarse ante el controlador, enviar solicitudes de reserva
+* y recibir respuestas. Además, se incluyen funciones de manejo de
+* archivos, comunicación por pipes y limpieza de recursos. Este módulo
+* estructura la interfaz del agente, permitiendo su correcta interacción
+* con el controlador en un entorno concurrente.
 ******************************************************/
 
 #ifndef AGENTE_FUNCIONES_H
@@ -42,5 +53,21 @@ void cerrar_y_limpiar(int fd_entrada, int fd_propio, char* pipe_propio, char* no
 
 #endif
 
+/******************************************************
+* CONCLUSIÓN
+*
+* Este archivo establece la interfaz fundamental del
+* agente, proporcionando los prototipos y parámetros
+* necesarios para su comunicación con el controlador.
+* Al definir de manera clara las funciones de registro,
+* envío de solicitudes, recepción de respuestas y manejo
+* de recursos, se garantiza una interacción ordenada,
+* modular y confiable dentro del sistema concurrente.
+*
+* Gracias a esta estructura, los agentes pueden operar
+* de forma independiente mientras mantienen sincronización
+* con el controlador, permitiendo así el funcionamiento
+* distribuido y estable de la simulación.
+******************************************************/
 
 

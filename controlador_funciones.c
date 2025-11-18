@@ -5,6 +5,17 @@
 * Autor(es): Alejandro Beltran, Mauricio Beltran & Andres Diaz
 * Materia: Sistemas opertivos
 * Temas: Proyecto controlador_funciones.c
+*
+* Descripción:
+* Este archivo implementa la lógica principal del controlador del sistema
+* de reservas. Aquí se desarrolla el funcionamiento del reloj simulado,
+* la gestión de solicitudes de los agentes, el procesamiento de mensajes,
+* la asignación, reprogramación o negación de reservas y el control del
+* aforo del parque en tiempo real. También incluye la generación del
+* reporte final, el cierre ordenado de los agentes y la limpieza de los
+* recursos del sistema. Este módulo constituye el núcleo operativo de la
+* simulación, coordinando la interacción entre hilos, pipes y estructuras
+* de datos.
 ******************************************************/
 #include "controlador_funciones.h"
 
@@ -266,3 +277,28 @@ void limpiar_recursos() {
     unlink(pipe_entrada); //elimina el fifo
 }
 
+/******************************************************
+* CONCLUSIÓN
+*
+* Este archivo genera el motor del controlador,
+* ejecutando las funciones críticas que permiten la
+* simulación completa del parque. El uso de hilos
+* independientes para el reloj y la gestión de solicitudes
+* garantiza concurrencia realista y evita bloqueos entre
+* las distintas entidades del sistema.
+*
+* La implementación del algoritmo de reservas, con validación
+* de aforo, detección de conflictos y búsqueda de bloques
+* disponibles, asegura un manejo eficiente y coherente de las
+* solicitudes. Igualmente, la comunicación mediante pipes
+* permite una interacción clara y ordenada entre agentes y
+* controlador.
+*
+* Finalmente, el reporte generado al concluir la simulación
+* ofrece una visión global del comportamiento del sistema,
+* evidenciando horas pico, horas valle y estadísticas clave
+* de aceptación, reprogramación y negación de reservas.
+* Con esto, se cumple exitosamente el objetivo del proyecto:
+* modelar un entorno concurrente estable, sincronizado y
+* funcional.
+******************************************************/

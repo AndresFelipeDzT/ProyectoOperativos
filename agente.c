@@ -5,6 +5,17 @@
 * Autor(es): Alejandro Beltran, Mauricio Beltran & Andres Diaz
 * Materia: Sistemas opertivos
 * Temas: Proyecto agente.c
+*
+* Descripción:
+* Este archivo implementa el programa principal del agente dentro del
+* sistema de reservas. Su función es coordinar todas las operaciones
+* necesarias para que el agente pueda interactuar correctamente con el
+* controlador: interpretar argumentos de entrada, crear su pipe propio,
+* registrarse ante el controlador, recibir la hora inicial de la
+* simulación y procesar las solicitudes de reserva presentes en el
+* archivo asignado. Finalmente, gestiona el cierre de los pipes y la
+* liberación de recursos utilizados. Este módulo constituye la entrada
+* ejecutable del agente y organiza su flujo completo de ejecución.
 ******************************************************/
 
 #include <stdio.h> //Libreria para mostrar informacion por pantalla
@@ -44,4 +55,27 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
+
+/******************************************************
+* CONCLUSIÓN
+*
+* Este archivo implementa el flujo principal de ejecución
+* del agente, integrando todas las funciones necesarias
+* para su comunicación con el controlador. Desde el
+* procesamiento de argumentos hasta el cierre de recursos,
+* el agente opera de manera estructurada y autónoma,
+* garantizando que cada solicitud sea enviada y procesada
+* correctamente.
+*
+* Al coordinar la creación del pipe propio, el registro,
+* la recepción de la hora inicial y el envío de solicitudes,
+* el agente cumple su rol dentro del sistema concurrente,
+* funcionando como un componente activo y sincronizado con
+* el controlador.
+*
+* En conjunto, este archivo asegura un funcionamiento
+* ordenado, modular y eficiente del agente, permitiendo
+* ejecutar la simulación de manera confiable y conforme a
+* los objetivos del proyecto.
+******************************************************/
 
